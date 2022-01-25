@@ -1,0 +1,51 @@
+[2022-01-18 00:01:02,938] {env.py:226} WARNING - Python 3.9.1 found in current environment is not officially supported by BentoML. The docker base image used is'bentoml/model-server:0.13.1' which will use conda to install Python 3.9.1 in the build process. Supported Python versions are: f3.6, 3.7, 3.8
+[2022-01-18 00:01:04,899] {bento_repository_api.py:271} INFO - BentoService bundle 'IrisClassifier:20220118000104_2128C2' saved to: /Users/hyundong/bentoml/repository/IrisClassifier/20220118000104_2128C2
+[2022-01-18 00:36:46,505] {env.py:226} WARNING - Python 3.9.1 found in current environment is not officially supported by BentoML. The docker base image used is'bentoml/model-server:0.13.1' which will use conda to install Python 3.9.1 in the build process. Supported Python versions are: f3.6, 3.7, 3.8
+[2022-01-18 00:37:22,249] {env.py:226} WARNING - Python 3.9.1 found in current environment is not officially supported by BentoML. The docker base image used is'bentoml/model-server:0.13.1' which will use conda to install Python 3.9.1 in the build process. Supported Python versions are: f3.6, 3.7, 3.8
+[2022-01-18 00:37:23,304] {bento_repository_api.py:271} INFO - BentoService bundle 'IrisClassifier1:20220118003722_8A8CE6' saved to: /Users/hyundong/bentoml/repository/IrisClassifier1/20220118003722_8A8CE6
+[2022-01-18 00:41:53,526] {yatai_service_impl.py:482} INFO - Getting latest version IrisClassifier:20220118000104_2128C2
+[2022-01-18 00:41:53,544] {__init__.py:88} INFO - Starting BentoML API proxy in development mode..
+[2022-01-18 00:41:53,862] {__init__.py:71} INFO - Starting BentoML API server in development mode..
+[2022-01-18 00:41:54,406] {env.py:226} WARNING - Python 3.9.1 found in current environment is not officially supported by BentoML. The docker base image used is'bentoml/model-server:0.13.1' which will use conda to install Python 3.9.1 in the build process. Supported Python versions are: f3.6, 3.7, 3.8
+[2022-01-18 00:41:55,187] {marshal.py:300} INFO - Micro batch enabled for API `predict` max-latency: 20000 max-batch-size 4000
+[2022-01-18 00:41:55,188] {marshal.py:204} INFO - Your system nofile limit is 10496, which means each instance of microbatch service is able to hold this number of connections at same time. You can increase the number of file descriptors for the server process, or launch more microbatch instances to accept more concurrent connection.
+[2022-01-18 00:43:51,723] {inference_api.py:178} ERROR - Error caught in API function:
+Traceback (most recent call last):
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/bentoml/service/inference_api.py", line 176, in wrapped_func
+    return self._user_func(*args, **kwargs)
+  File "/Users/hyundong/bentoml/repository/IrisClassifier/20220118000104_2128C2/IrisClassifier/bento_service.py", line 15, in predict
+    return self.artifacts.model.predict(df)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/svm/_base.py", line 624, in predict
+    y = super().predict(X)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/svm/_base.py", line 342, in predict
+    X = self._validate_for_predict(X)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/svm/_base.py", line 474, in _validate_for_predict
+    X = check_array(X, accept_sparse='csr', dtype=np.float64,
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/utils/validation.py", line 687, in check_array
+    raise ValueError(
+ValueError: Expected 2D array, got scalar array instead:
+array=nan.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+[2022-01-18 00:44:50,973] {inference_api.py:178} ERROR - Error caught in API function:
+Traceback (most recent call last):
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/bentoml/service/inference_api.py", line 176, in wrapped_func
+    return self._user_func(*args, **kwargs)
+  File "/Users/hyundong/bentoml/repository/IrisClassifier/20220118000104_2128C2/IrisClassifier/bento_service.py", line 15, in predict
+    return self.artifacts.model.predict(df)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/svm/_base.py", line 624, in predict
+    y = super().predict(X)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/svm/_base.py", line 342, in predict
+    X = self._validate_for_predict(X)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/svm/_base.py", line 474, in _validate_for_predict
+    X = check_array(X, accept_sparse='csr', dtype=np.float64,
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/Users/hyundong/miniconda3/lib/python3.9/site-packages/sklearn/utils/validation.py", line 687, in check_array
+    raise ValueError(
+ValueError: Expected 2D array, got scalar array instead:
+array=nan.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+[2022-01-18 00:57:47,959] {yatai_service.py:225} INFO - Terminating YataiService gRPC server..
+[2022-01-18 00:58:14,602] {yatai_service_impl.py:482} INFO - Getting latest version IrisClassifier:20220118000104_2128C2
